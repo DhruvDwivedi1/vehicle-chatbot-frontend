@@ -64,7 +64,7 @@ function LoginPage({ onLogin, onSwitchToRegister }) {
     setError('');
 
     try {
-      const response = await fetch('https://vehicle-chatbot-backend.onrender.com/api/auth/login', {
+      const response = await fetch('https://vehicle-chatbot-backend.vercel.app/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
@@ -166,7 +166,7 @@ function RegisterPage({ onRegister, onSwitchToLogin }) {
     setError('');
 
     try {
-      const response = await fetch('https://vehicle-chatbot-backend.onrender.com/api/auth/register', {
+      const response = await fetch('https://vehicle-chatbot-backend.vercel.app/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
@@ -326,7 +326,7 @@ function ChatInterface({ user, token, onLogout }) {
 
   const loadUserPreferences = async () => {
     try {
-      const response = await fetch('https://vehicle-chatbot-backend.onrender.com/api/preferences', {
+      const response = await fetch('https://vehicle-chatbot-backend.vercel.app/api/preferences', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -342,7 +342,7 @@ function ChatInterface({ user, token, onLogout }) {
 
   const startConversation = async () => {
     try {
-      const response = await fetch('https://vehicle-chatbot-backend.onrender.com/api/conversations', {
+      const response = await fetch('https://vehicle-chatbot-backend.vercel.app/api/conversations', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -370,7 +370,7 @@ function ChatInterface({ user, token, onLogout }) {
     setLoading(true);
 
     try {
-      const response = await fetch(`https://vehicle-chatbot-backend.onrender.com/api/conversations/${conversationId}/messages`, {
+      const response = await fetch(`https://vehicle-chatbot-backend.vercel.app/api/conversations/${conversationId}/messages`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -692,7 +692,7 @@ function PreferencesModal({ currentPreferences, token, onClose, onSave }) {
   const handleSave = async () => {
     setSaving(true);
     try {
-      const response = await fetch('https://vehicle-chatbot-backend.onrender.com/api/preferences', {
+      const response = await fetch('https://vehicle-chatbot-backend.vercel.app/api/preferences', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -739,7 +739,7 @@ function PreferencesModal({ currentPreferences, token, onClose, onSave }) {
 
     setDeleting(true);
     try {
-      const response = await fetch('https://vehicle-chatbot-backend.onrender.com/api/preferences/delete', {
+      const response = await fetch('https://vehicle-chatbot-backend.vercel.app/api/preferences/delete', {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`
