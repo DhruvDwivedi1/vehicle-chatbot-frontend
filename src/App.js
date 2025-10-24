@@ -1,12 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Send, LogOut, User, Car, X, Check } from 'lucide-react';
 
-<<<<<<< HEAD
-// Update this to your hosted backend URL
-const API_URL = 'https://vehicle-chatbot-backend.vercel.app';
-
-=======
->>>>>>> 6a239d2 (Update frontend to use hosted backend API)
 export default function VehicleChatbotApp() {
   const [currentView, setCurrentView] = useState('login');
   const [user, setUser] = useState(null);
@@ -275,8 +269,6 @@ function RegisterPage({ onRegister, onSwitchToLogin }) {
       </div>
     </div>
   );
-<<<<<<< HEAD
-=======
 }
 
 function ChatInterface({ user, token, onLogout }) {
@@ -1136,5 +1128,4 @@ function VehicleDetailModal({ vehicle, onClose }) {
       </div>
     </div>
   );
->>>>>>> 6a239d2 (Update frontend to use hosted backend API)
 }
