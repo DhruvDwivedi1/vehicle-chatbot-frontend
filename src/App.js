@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Send, LogOut, User, Car, X, Check } from 'lucide-react';
 
 // Update this to your hosted backend URL
-const API_URL = 'https://vehicle-chatbot-backend.vercel.app/';
+const API_URL = 'https://vehicle-chatbot-backend.vercel.app';
 
 export default function VehicleChatbotApp() {
   const [currentView, setCurrentView] = useState('login');
